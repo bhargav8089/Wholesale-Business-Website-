@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Search Products With Any Parameters</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"], input[type="button"], button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover, button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body onload="loaddata()">
+    <h1>Search Products With Any Parameters</h1>
+    <form method="POST" action="productresults.php" id="productresults">
+        <label for="pname">Product Name (substring)</label>
+        <input type="text" name="pname" id="pname">
+        <br>
+        <label for="city">Warehouse City (substring)</label>
+        <input type="text" name="city" id="city">
+        <br>
+        <label for="minq">Minimum Quantity</label>
+        <input type="number" name="minq" id="minq">
+        <br>
+        <label for="maxq">Maximum Quantity</label>
+        <input type="number" name="maxq" id="maxq">
+        <br>
+        <label for="minp">Minimum Price</label>
+        <input type="number" name="minp" id="minp">
+        <br>
+        <label for="maxp">Maximum Price</label>
+        <input type="number" name="maxp" id="maxp">
+        <br>
+        <input type="submit" value="Search Products" onclick="storedata()">
+        <input type="button" value="Clear form" onclick="clearAll()">
+        <input type="button" value="Home"  onclick="location.href='index.html'">
+    </form>
+    <script src="javas.js"></script>
+</body>
+</html>
